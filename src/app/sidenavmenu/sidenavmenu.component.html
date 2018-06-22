@@ -1,0 +1,105 @@
+<clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed"  class="nav-trigger--bottom">
+    <div class="user-info" *ngIf="!collapsed">
+        <div class="user-photo">
+          <img src="../../assets/img/img_avatar.png" alt="" />
+        </div>
+        <div class="user-name">
+          Erwin Antonius
+        </div>
+    </div>
+    <clr-vertical-nav-group routerLinkActive="active">
+        <clr-icon shape="data-cluster" clrVerticalNavIcon></clr-icon>
+        Master Data
+        <clr-vertical-nav-group-children>
+            <a clrVerticalNavLink routerLink="/home/client" routerLinkActive="active">
+                Client
+            </a>
+        </clr-vertical-nav-group-children>
+    </clr-vertical-nav-group>
+    <a clrVerticalNavLink routerLinkActive="active" routerLink="/home/project">
+      <clr-icon shape="list" clrVerticalNavIcon></clr-icon>
+      Project
+    </a>
+    <a clrVerticalNavLink routerLinkActive="active" routerLink="/home/participant">
+      <clr-icon shape="users" clrVerticalNavIcon></clr-icon>
+      Participant
+    </a>
+    <a clrVerticalNavLink routerLinkActive="active" routerLink="/home/competency">
+      <clr-icon shape="objects" clrVerticalNavIcon></clr-icon>
+      Competency
+    </a>
+    <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+      <clr-icon shape="lightbulb" clrVerticalNavIcon></clr-icon>
+      Aspect Potential
+    </a>
+    <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+      <clr-icon shape="blocks-group" clrVerticalNavIcon></clr-icon>
+      Position
+    </a>
+    <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+      <clr-icon shape="key" clrVerticalNavIcon></clr-icon>
+      Key Behavior
+    </a>
+    <clr-vertical-nav-group routerLinkActive="active">
+        <clr-icon shape="book" clrVerticalNavIcon></clr-icon>
+        Glossary
+        <clr-vertical-nav-group-children>
+            <a clrVerticalNavLink routerLink="./normal/pidgey" routerLinkActive="active">
+                Aspect Level
+            </a>
+            <a clrVerticalNavLink routerLink="./normal/snorlax" routerLinkActive="active">
+                Competency Level (QP)
+            </a>
+            <a clrVerticalNavLink routerLink="./normal/snorlax" routerLinkActive="active">
+                Competency Level (Non QP)
+            </a>
+        </clr-vertical-nav-group-children>
+    </clr-vertical-nav-group>
+    <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+        <clr-icon shape="line-chart" clrVerticalNavIcon></clr-icon>
+        Aspect Std Level
+    </a>
+    <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+        <clr-icon shape="bar-chart" clrVerticalNavIcon></clr-icon>
+        Competency Std Level
+    </a>
+    <clr-vertical-nav-group routerLinkActive="active">
+        <clr-icon shape="helix" clrVerticalNavIcon></clr-icon>
+        Test Weight
+        <clr-vertical-nav-group-children>
+            <a clrVerticalNavLink routerLink="./normal/pidgey" routerLinkActive="active">
+                Aspect
+            </a>
+            <a clrVerticalNavLink routerLink="./normal/snorlax" routerLinkActive="active">
+                Competency (Project)
+            </a>
+            <a clrVerticalNavLink routerLink="./normal/snorlax" routerLinkActive="active">
+               Component Weight
+            </a>
+        </clr-vertical-nav-group-children>
+    </clr-vertical-nav-group>
+    <clr-vertical-nav-group routerLinkActive="active">
+        <clr-icon shape="dashboard" clrVerticalNavIcon></clr-icon>
+        Result
+        <clr-vertical-nav-group-children>
+            <a clrVerticalNavLink routerLink="./normal/pidgey" routerLinkActive="active">
+                Test
+            </a>
+            <a clrVerticalNavLink routerLink="./normal/snorlax" routerLinkActive="active">
+                Interview
+            </a>
+        </clr-vertical-nav-group-children>
+    </clr-vertical-nav-group>
+    <clr-vertical-nav-group routerLinkActive="active">
+        <clr-icon shape="plugin"></clr-icon>
+        Assess First
+        <clr-vertical-nav-group-children>
+            <a clrVerticalNavLink routerLink="/home/assessfirst" routerLinkActive="active">
+                Test
+            </a>
+            <a clrVerticalNavLink routerLink="./normal/snorlax" routerLinkActive="active">
+                Interview
+            </a>
+        </clr-vertical-nav-group-children>
+    </clr-vertical-nav-group>
+</clr-vertical-nav>

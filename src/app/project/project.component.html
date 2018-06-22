@@ -1,0 +1,83 @@
+<div class="container-project">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    Project
+                </div>
+                <div class="card-block">
+                    <div class="card-title">
+                        <button type="button" class="btn btn-primary btn-icon" (click)="showInput=true" *ngIf="!showInput">
+                            <clr-icon shape="plus"></clr-icon> Create
+                        </button>
+                        <button type="button" class="btn btn-warning btn-icon" (click)="showInput=false" *ngIf="showInput">
+                                <clr-icon shape="times"></clr-icon> Cancel
+                        </button>
+                    </div>
+                    <div class="card-text">
+                        <form class="input-form" *ngIf="showInput">
+                            <section class="form-block">
+                                <div class="form-group">
+                                    <label for="aForm_1">Project Name</label>
+                                    <input type="text" id="aForm_1" placeholder="Enter value here" size="45" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="aForm_2">Client</label>
+                                    <input type="password" id="aForm_2" placeholder="Enter another value here" size="45">
+                                </div>
+                                <div class="form-group">
+                                    <label for="aForm_3">A select box</label>
+                                    <div class="select">
+                                        <select id="aForm_3">
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="aForm_4">Textarea</label>
+                                    <textarea id="aForm_4" rows="5"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </section>
+                        </form>
+                        <clr-datagrid>
+                            <clr-dg-column>Project Code</clr-dg-column>
+                            <clr-dg-column>Client
+                                <clr-dg-string-filter [clrDgStringFilter]="clientFilter"></clr-dg-string-filter>
+                            </clr-dg-column>
+                            <clr-dg-column>Project Name
+                                <clr-dg-string-filter [clrDgStringFilter]="projectFilter"></clr-dg-string-filter>
+                            </clr-dg-column>
+                            <clr-dg-column>Assessment Date</clr-dg-column>
+                            <clr-dg-column>Update</clr-dg-column>
+                            <clr-dg-row *clrDgItems="let proj of projList">
+                                <clr-dg-cell>{{proj.projectcode}}</clr-dg-cell>
+                                <clr-dg-cell>{{proj.clientname}}</clr-dg-cell>
+                                <clr-dg-cell>{{proj.projectname}}</clr-dg-cell>
+                                <clr-dg-cell>{{proj.assessmentdate | date}}</clr-dg-cell>
+                                <clr-dg-cell class="editrow">
+                                    <button type="button" class="btn btn-link btn-icon btn-sm" title="Detail">
+                                        <clr-icon shape="eye"></clr-icon>
+                                    </button>
+                                    <button type="button" class="btn btn-link btn-icon btn-sm" title="Edit">
+                                        <clr-icon shape="pencil"></clr-icon>
+                                    </button>
+                                    <button type="button" class="btn btn-link btn-danger btn-icon btn-sm" title="Delete">
+                                        <clr-icon shape="trash"></clr-icon>
+                                    </button>
+                                </clr-dg-cell>
+                            </clr-dg-row>
+                            <clr-dg-footer>{{projList.length}} Row</clr-dg-footer>
+                        </clr-datagrid>
+                    </div>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+.logo{
+    text-align: center;
+    color:#8DC642;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+
+.user-info div{
+    padding-top:10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+.user-photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.login-group{
+    padding-top: 10px !important;
+}
+
+.login{
+    background: #fff !important;
+}
+
+.login-wrapper{
+    background: url("../../assets/img/bg-01.jpg") repeat-x !important;
+    background-position: right !important; 
+}
+
+.register{
+    margin-top: 60px;
+}
+
+.register * {
+    display: block;
+    padding: 12px;
+}

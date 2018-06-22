@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.header-4{
+    background: #175D8B !important;
+}
+
+.editrow{
+    padding:3px !important;
+    margin: 3px !important;
+}

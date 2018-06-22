@@ -1,0 +1,12 @@
+.branding img{
+    width: 133px;
+    height: 50px;
+}
+
+
+.title{
+    color:#8DC642 !important;
+    letter-spacing: 3px !important;
+    font-weight: bold !important;
+    font-size: 17px !important;
+}

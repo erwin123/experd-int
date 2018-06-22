@@ -1,0 +1,87 @@
+<div class="login-wrapper">
+    <form class="login" [formGroup]="loginForm" novalidate (submit)="login(loginForm.value, loginForm.valid)">
+        <label class="title">
+            <div class="logo">
+                <img src="../../assets/img/Logo-Experd.png" alt="" /> PSIKOGRAM
+            </div>
+            <div class="progress loop" *ngIf="loading" style="font-size: 1px;position: absolute;left:0;">
+                <progress></progress>
+            </div>
+            <div class="user-info">
+                <div class="user-photo">
+                    <img src="../../assets/img/img_avatar.png" alt="" />
+                </div>
+                <div class="user-name">
+                    Last signed in : Erwin Antonius
+                </div>
+            </div>
+        </label>
+
+        <div class="login-group">
+            <label for="username" aria-haspopup="true" role="tooltip" class="tooltip tooltip-validation tooltip-sm" [class.invalid]="loginForm.get('username').invalid && (loginForm.get('username').dirty || loginForm.get('username').touched)">
+                <input class="username" type="text" placeholder="Username" formControlName="username">
+                <span class="tooltip-content">
+                    Username is required.
+                </span>
+            </label>
+
+            <label for="password" aria-haspopup="true" role="tooltip" class="tooltip tooltip-validation tooltip-sm" [class.invalid]="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                <input class="password" type="password" placeholder="Password" formControlName="password">
+                <span class="tooltip-content">
+                    Password is required.
+                </span>
+            </label>
+
+            <div class="toggle-switch">
+                <input type="checkbox" id="toggle_1" [(ngModel)]="rememberMe" formControlName="rememberMe">
+                <label for="toggle_1">Remember Me</label>
+            </div>
+            <div class="error active" *ngIf="error">
+                Invalid user name or password
+            </div>
+
+            <button [clrLoading]="loading" type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+            <a (click)="basic = true" style="cursor: pointer;" class="signup">Sign up for a Company ID</a>
+        </div>
+    </form>
+</div>
+
+<clr-modal [(clrModalOpen)]="basic" [clrModalSize]="'sm'">
+    <h3 class="modal-title">Register New User</h3>
+    <div class="modal-body">
+        <form class="register" [formGroup]="registerForm" novalidate (submit)="register(registerForm.value, registerForm.valid)">
+            <label for="usernameNew" aria-haspopup="true" role="tooltip" class="tooltip tooltip-top-left tooltip-validation tooltip-sm"
+                [class.invalid]="registerForm.get('usernameNew').invalid
+                && (registerForm.get('usernameNew').dirty
+                || registerForm.get('usernameNew').touched)">
+                <input class="registerForm" type="text" placeholder="Username" formControlName="usernameNew">
+                <span class="tooltip-content">
+                    Username is required.
+                </span>
+            </label>
+            <label for="passwordNew" aria-haspopup="true" role="tooltip" class="tooltip tooltip-top-left tooltip-validation tooltip-sm"
+                [class.invalid]="registerForm.get('passwordNew').invalid
+                && (registerForm.get('passwordNew').dirty
+                || registerForm.get('passwordNew').touched)">
+                <input class="registerForm" type="text" placeholder="Password" formControlName="passwordNew">
+                <span class="tooltip-content">
+                    Password is required.
+                </span>
+            </label>
+            <label for="confirmPasswordNew" aria-haspopup="true" role="tooltip" class="tooltip tooltip-top-left tooltip-validation tooltip-sm"
+                [class.invalid]="registerForm.get('confirmPasswordNew').invalid
+                && (registerForm.get('confirmPasswordNew').dirty
+                || registerForm.get('confirmPasswordNew').touched)">
+                <input class="registerForm" type="text" placeholder="Confirm Password" formControlName="confirmPasswordNew">
+                <span class="tooltip-content">
+                    Confirm Password is required.
+                </span>
+            </label>
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="basic = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="basic = false">Register</button>
+    </div>
+</clr-modal>

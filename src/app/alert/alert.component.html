@@ -1,0 +1,11 @@
+<clr-modal [(clrModalOpen)]="open" [clrModalSize]="'sm'">
+  <h3 class="modal-title">{{messageTitle}}</h3>
+  <div class="modal-body">
+      <p>{{messageBody}}</p>
+  </div>
+  <div class="modal-footer">
+      <button *ngIf="!confirm" type="button" class="btn btn-primary" (click)="open = false">Ok</button>
+      <button *ngIf="confirm" type="button" class="btn btn-primary" (click)="open = false;confirmationChoosen(true)">Yes</button>
+      <button *ngIf="confirm" type="button" class="btn btn-primary" (click)="open = false;confirmationChoosen(false)">Cancel</button>
+  </div>
+</clr-modal>
